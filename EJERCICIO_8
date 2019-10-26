@@ -1,0 +1,50 @@
+/*
+Realizar un programa que pida al usuario cuatro números enteros n1,n2,n3,n4 y presente en pantalla
+lo siguiente: (n1,n2,n3 y n4 serán números de tres cifras)
+
+(3 tabulaciones)
+Enero       Febrero
+n1          n2
+n3          n4
+*/
+
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+
+using namespace std;
+
+void gotoxy(int x, int y) {
+    HANDLE hcon = GetStdHandle (STD_OUTPUT_HANDLE);
+    COORD dwPos;
+    dwPos.X = x;
+    dwPos.Y = y;
+    SetConsoleCursorPosition(hcon, dwPos);
+}
+
+int main() {
+    int n1;
+    int n2;
+    int n3;
+    int n4;
+
+	cout<<"\n\t¿Cual sera el numero 1? ";
+	cin>>n1;
+	cout<<"\n\t¿Cual sera el numero 2? ";
+	cin>>n2;
+	cout<<"\n\t¿Cual sera el numero 3? ";
+	cin>>n3;
+	cout<<"\n\t¿Cual sera el numero 4? ";
+	cin>>n4;
+	
+    gotoxy(10,10);cout<<"Enero";
+    gotoxy(30,10);cout<<"Febrero";
+    gotoxy(10,11);cout<<n1;
+    gotoxy(10,12);cout<<n3;
+    gotoxy(30,11);cout<<n2;
+    gotoxy(30,12);cout<<n4<<endl<<endl<<endl;
+    
+	system("pause");
+    
+    return 0;
+}
